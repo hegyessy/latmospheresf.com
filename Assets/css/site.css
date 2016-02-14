@@ -25,10 +25,20 @@ header nav {
 }
 
 #about {
+
 	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 #about p {
 	margin: 2rem
 }
 
+#gallery {
+	text-align: center;
+}
+#gallery img {
+	margin: 1rem;	
+}
