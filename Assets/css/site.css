@@ -2,14 +2,27 @@ body {
 	font-family: "ATC Overlook", "Futura", Sans-serif;
 }
 
+
+h1 { float: left; }
+
+h2 {
+	font-size: 2.4rem;
+	line-height:7rem;
+	text-align:center;
+}
+
 p {
 	font-size: 1rem;
 	padding-bottom: 1vh;
 	line-height: 1.6rem;
 }
 
+
 header {
-	height: 90vh;
+	height: 70vh;
+	padding: 3rem;
+	color: white;
+	font-size: 2rem;
 /*	background-color: #efefef; */
 	background-image: url('../images/jpegs/ternynck-15-09-23.jpg');
 	background-position: center center;
@@ -19,13 +32,14 @@ header {
 	background-color: #555;
 }
 
-header nav {
-	text-align: right;
-	margin-right: 2rem;
+header nav  { text-align: right; }
+
+header nav a { color: white;
+	font-size: 1.2rem;
+	margin-left: 3rem;
 }
 
 #about {
-
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -33,12 +47,41 @@ header nav {
 }
 
 #about p {
-	margin: 2rem
+	margin: 0rem 2rem 1rem 2rem;
+	max-width: 520px;
 }
 
 #gallery {
+	margin: 0 auto;
 	text-align: center;
+	padding: 5rem 0;
 }
-#gallery img {
-	margin: 1rem;	
+
+#gallery-images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+#gallery-images img {
+	margin: 1rem;
+
+}
+
+footer {
+	text-align: center;
+	background-color: #444;
+	color: white;
+	height: 50vh;
+	padding: 5rem 0 10rem 0;
+}
+
+
+footer input {
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
+	height: 2.4rem;
+	width: 30rem;
 }

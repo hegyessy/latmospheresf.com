@@ -1,4 +1,5 @@
 <footer id="contact">
+	<h2>Contact</h2>
 	<form role="form">
 		<label for="contact_name">Name</label><br/>
 		<input type="text" id="contact_name" placeholder="Enter your name"></br>
