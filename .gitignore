@@ -1,2 +1,5 @@
-/thumbs
+.DS_Store
+/site/accounts
 /site/config/config.php
+/assets/avatars
+/thumbs/*
