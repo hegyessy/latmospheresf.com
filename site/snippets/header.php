@@ -5,6 +5,7 @@
 	<title>L'atmosphere home decorating</title>
 	<?php echo css('assets/css/reset.css') ?>
 	<?php echo css('assets/css/site.css') ?>
+	<?php echo js('assets/js/index.js') ?>
 </head>
 <body>
 	<header>
