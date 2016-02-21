@@ -17,6 +17,9 @@ for more information: http://getkirby.com/license
 
 c::set('license', '3d20d7ae9a554e4741efd19103fd4e11');
 
+/* TODO: Turn on caching for production release */
+c::set('cache', false);
+
 /*
 
 ---------------------------------------
