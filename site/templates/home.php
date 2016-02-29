@@ -6,5 +6,4 @@
 	</div>
 
 <?php snippet('home-gallery') ?>
-
 <?php snippet('footer') ?>

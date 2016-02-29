@@ -9,5 +9,6 @@
 		<input type="number" id="contact_phone" placeholder="1-408-555-5555"></br>
 	</form>
 </footer>
+<?php echo js('assets/js/index.js') ?>
 </body>
 </html>

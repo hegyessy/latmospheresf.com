@@ -1,9 +1,30 @@
-body {
-	font-family: "ATC Overlook", "Futura", Sans-serif;
+@-webkit-keyframes transitionOut {
+  0% { opacity: 1; }
+  100% { opacity: 0;}
 }
 
+@-webkit-keyframes transitionIn {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
 
-h1 { float: left; }
+.slide.hide {
+	opacity: 0;
+	animation-name: transitionOut;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.slide.show {
+	animation-name: transitionIn;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+body {
+	font-family: "ATC Overlook", "Futura", Sans-serif;
+	background-color: rgba(255,255,255,1);
+}
 
 h2 {
 	font-size: 2.4rem;
@@ -20,24 +41,55 @@ p {
 
 header {
 	height: 70vh;
-	padding: 3rem;
 	color: white;
 	font-size: 2rem;
-/*	background-color: #efefef; */
-	background-image: url('../images/jpegs/ternynck-15-09-23.jpg');
+	index: 2;
+	background-color: #333;
+}
+
+header nav  { 
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	width: auto;
+	z-index: 2;
+	text-align: right;
+}
+
+h1 a { 
+	position: absolute;
+	top: 3rem;
+	left: 3rem;
+	width: auto;
+	z-index: 2;
+	text-align: left;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 3px rgba(50,50,50,1);
+	color: rgba(255,255,255,1);
+}
+
+header nav a {
+	color: white;
+	font-size: 1.2rem;
+	margin-left: 3rem;
+}
+
+header .slide {
+	position: absolute;
+	top:0;
+	left:0;
+	height: 70vh;
+	width: 100%;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	background-color: #555;
+	z-index: 1;
+	opacity: 0;
 }
 
-header nav  { text-align: right; }
 
-header nav a { color: white;
-	font-size: 1.2rem;
-	margin-left: 3rem;
-}
 
 #about {
 	display: flex;
@@ -70,10 +122,49 @@ header nav a { color: white;
 
 }
 
+/* #slideshow {
+	position: absolute;
+	top:0;right:0;bottom:0;left:0;
+	background-color: transparent;
+	z-index:11;
+}
+
+.button_next {
+	
+}
+
+.button_prev {
+	
+}
+
+.button_close {
+	top: 2rem;
+	right: 2rem;
+	text-align: right;	
+}
+
+#slideshow .slide {
+	position: fixed;
+	top:0; left: 0; bottom; right:0;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	display: none;
+	opacity:0;
+	z-index: -1;
+	transition: opacity 2s;
+}
+
+#slideshow .slide.current {
+	display: block;
+	opacity: 1;
+	z-index: 10;
+} */
+
 footer {
 	text-align: center;
-	background-color: #444;
-	color: white;
+	background-color: #fff;
+	color: #444;
 	height: 50vh;
 	padding: 5rem 0 10rem 0;
 }
