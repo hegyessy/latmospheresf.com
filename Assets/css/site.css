@@ -1,3 +1,8 @@
+body {
+	font-family: "ATC Overlook", "Futura", Sans-serif;
+	background-color: rgba(255,255,255,1);
+}
+
 @-webkit-keyframes transitionOut {
   0% { opacity: 1; }
   100% { opacity: 0;}
@@ -18,7 +23,10 @@
 
 #slideshow .slide {
 	position: absolute;
-	top:0; left: 0; bottom; right:0;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right:0;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -43,11 +51,6 @@
 
 #slideshow .slide.portrait {
 	background-size: contain;
-}
-
-body {
-	font-family: "ATC Overlook", "Futura", Sans-serif;
-	background-color: rgba(255,255,255,1);
 }
 
 h2 {
@@ -111,16 +114,28 @@ header .slide {
 	opacity: 0;
 }
 
-#about {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
 
-#about p {
-	margin: 0rem 2rem 1rem 2rem;
-	max-width: 520px;
+	#about {
+		display: block;
+	}
+	
+	#about p {
+		margin: 0rem 2rem 1rem 2rem;
+		width: 80%;
+	}
+
+@media (min-width: 768px) {
+	#about {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#about p {
+		margin: 0rem 2rem 1rem 2rem;
+		max-width: 40%;
+	}
 }
 
 #gallery {
@@ -136,24 +151,21 @@ header .slide {
 	justify-content: center;
 }
 
-#gallery-images img {
-	margin: 1rem;
-}
-
 .button {
 	position: absolute;
 	top: 50vh;
 	z-index: 10;
 	color: white;
 	width: 5rem;
+	cursor: pointer;
 }
 
 .left-controll {
-	left: 2rem;
+	left: 1rem;
 }
 
 .right-controll {
-	right: 2rem;
+	right: 1rem;
 	text-align: right;
 }
 

@@ -2,8 +2,9 @@
 	<header>
 		<h1><a href="/" title="about">L'atmosphere</a></h1>
 	</header>
-	<div id="next" class="button right-controll controll">Next</div>
-	<div id="prev" class="button left-controll controll">Prev</div>
+	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
+	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
+
 	<div id="slideshow">
 		<?php foreach($page->images()->flip() as $key => $image): ?>
 			<div
