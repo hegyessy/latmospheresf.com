@@ -90,7 +90,6 @@ header .slide {
 }
 
 
-
 #about {
 	display: flex;
 	flex-direction: row;
@@ -119,47 +118,47 @@ header .slide {
 
 #gallery-images img {
 	margin: 1rem;
-
 }
 
-/* #slideshow {
-	position: absolute;
-	top:0;right:0;bottom:0;left:0;
-	background-color: transparent;
-	z-index:11;
+.button {
+	position: fixed;
+	top: 50%;
+	z-index: 9;
+	text-align: right;
+	color: rgba(255,255,255,1);
+	text-shadow: 0px 5px 5px color(0,0,0,1);
 }
 
 .button_next {
-	
+	right: 2rem;
 }
 
 .button_prev {
-	
+	left: 2rem;
+	text-align: left;
 }
 
 .button_close {
 	top: 2rem;
-	right: 2rem;
-	text-align: right;	
+	right: 2rem;	
+}
+
+#slideshow {
+	background-color: rgba(0,0,0,1);
+/* 	position: absolute;
+	top:0;right:0;bottom:0;left:0;
+	background-color: transparent;
+	z-index:11; */
 }
 
 #slideshow .slide {
-	position: fixed;
+	position: absolute;
 	top:0; left: 0; bottom; right:0;
 	background-size: cover;
 	background-position: center center;
 	height: 100vh;
-	display: none;
-	opacity:0;
-	z-index: -1;
-	transition: opacity 2s;
+	background-color: rgba(0,0,0,1);
 }
-
-#slideshow .slide.current {
-	display: block;
-	opacity: 1;
-	z-index: 10;
-} */
 
 footer {
 	text-align: center;

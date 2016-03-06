@@ -1,4 +1,4 @@
-<div id="slideshow">
+<div id="gallery">
 
 	<?php foreach($pages->gallery->images()->limit(10) as $key => $image): ?>
 		<div id="<?php echo $key ?>" class="slide" style="background-image:url(<?php echo $image->url() ?>);"></div>
