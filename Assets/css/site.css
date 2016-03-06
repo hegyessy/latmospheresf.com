@@ -8,6 +8,9 @@
   100% { opacity: 1;}
 }
 
+.show { opacity: 1; }
+.hide { opacity: 0; }
+
 .slide.hide {
 	opacity: 0;
 	animation-name: transitionOut;
@@ -89,7 +92,6 @@ header .slide {
 	opacity: 0;
 }
 
-
 #about {
 	display: flex;
 	flex-direction: row;
@@ -113,7 +115,6 @@ header .slide {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-
 }
 
 #gallery-images img {
@@ -121,34 +122,29 @@ header .slide {
 }
 
 .button {
-	position: fixed;
-	top: 50%;
-	z-index: 9;
-	text-align: right;
-	color: rgba(255,255,255,1);
-	text-shadow: 0px 5px 5px color(0,0,0,1);
+	position: absolute;
+	top: 50vh;
+	z-index: 10;
+	color: white;
+	width: 5rem;
 }
 
-.button_next {
-	right: 2rem;
-}
-
-.button_prev {
+.left-controll {
 	left: 2rem;
-	text-align: left;
 }
 
-.button_close {
-	top: 2rem;
-	right: 2rem;	
+.right-controll {
+	right: 2rem;
+	text-align: right;
 }
 
 #slideshow {
-	background-color: rgba(0,0,0,1);
-/* 	position: absolute;
-	top:0;right:0;bottom:0;left:0;
-	background-color: transparent;
-	z-index:11; */
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background-color: #222;
 }
 
 #slideshow .slide {

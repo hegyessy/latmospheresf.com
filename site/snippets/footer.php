@@ -11,7 +11,7 @@
 </footer>
 <?php echo js('assets/js/index.js') ?>
 <script>
-	CONFIG._type = "auto";
+	APP.slideshow.config._type = "auto";
 	APP.slideshow.init();
 </script>
 </body>
