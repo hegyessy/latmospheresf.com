@@ -16,18 +16,20 @@ APP.slideshow = {
 			document.querySelector(".slide").classList.toggle("hide");
 			document.querySelector(".slide").classList.toggle("show");
 		}
-		if(CONFIG._type==="controlls"){
-			S.controlls.next();
-			S.controlls.previous();				
-		}
-		if(CONFIG._type==="auto"){
-			if(document.querySelector(".left-controll")){
-				document.querySelector(".left-controll").remove();
-			}
-			if(document.querySelector(".right-controll")){
-				document.querySelector(".right-controll").remove();
-			}
-			S.auto();
+		switch (CONFIG._type) {
+			case "controlls":
+				S.controlls.next();
+				S.controlls.previous();
+				console.log("starting slideshow with controlls");
+				break;
+			case "auto":
+				(document.querySelector(".left-controll")) ? query(".left-controll").remove() : null;
+				(document.querySelector(".right-controll")) ? query(".left-controll").remove() : null;
+				S.auto();
+				console.log("starting auto slideshow");
+				break;
+			default:
+				console.log("default removed from config. why would you do that?");
 		}
 	},
 
