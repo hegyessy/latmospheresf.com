@@ -1,4 +1,4 @@
-<form role="form" method="post">
+<form class="form" role="form" method="post">
 
 	<?php if($alert): ?>
 		<div class="alert">
@@ -10,11 +10,9 @@
 		</div>
 	<?php endif ?>
 		
-	<label for="name">Name</label><br/>
-	<input type="text" id="name" name="name" placeholder="Enter your name" required></br>
-	<label for="email">Email address</label><br/>
-	<input type="email" id="email" name="email" placeholder="Enter email" required></br>
-	<label for="phone">Phone number (optional)</label></br>
-	<input type="number" id="phone" name="phone" placeholder="1-408-555-5555"></br>
-	<input type="submit" name="submit" value="Submit">
+
+	<input type="text" class="contact-input" id="name" name="name" placeholder="Name (required)" required>
+	<input type="email" class="contact-input" id="email" name="email" placeholder="Email (required)" required>
+	<input type="number" class="contact-input" id="phone" name="phone" placeholder="Phone number (optional)">
+	<input type="submit" class="contact-button" name="submit" value="Submit">
 </form>
