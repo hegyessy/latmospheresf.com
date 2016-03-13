@@ -13,8 +13,6 @@ body {
   100% { opacity: 1;}
 }
 
-
-
 #slideshow {
 	position: absolute;
 	top:0;
@@ -200,7 +198,11 @@ footer h3 {
     outline: none;
 }
 
-.form input, .form button {
+.form.success input {
+	display: none;
+}
+
+.form input {
 	display: block;
 	border: 0 none;
 	text-align: center;
