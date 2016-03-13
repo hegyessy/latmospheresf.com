@@ -1,4 +1,8 @@
-<form class="form" role="form" method="post">
+<form id="contact" class="form" role="form" method="post">
+
+	<div class="success">
+		<p>Thank you. We'll contact you soon</p>
+	</div>
 
 	<?php if($alert): ?>
 		<div class="alert">
