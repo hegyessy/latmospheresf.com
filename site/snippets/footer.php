@@ -1,4 +1,4 @@
-<footer id="contact">
+<footer>
 	<h2>Contact</h2>
 	<h3>contact@latmospheresf.com</h3>
 	<?php snippet('contact_view') ?>

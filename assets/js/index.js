@@ -93,7 +93,54 @@ APP.slideshow = {
 			}, false);
 		}
 	}
-}
+};
 
+APP.contact = {
+	
+	config: {
+		_formId: "contact"
+	},
+	
+	init: function () {
+		APP.contact.event.listen();
+	},
+	
+	event: {
+		listen: function() {
+			var form = document.getElementById(APP.contact.config._formId);
+			form.addEventListener("submit", function(event) {
+				event.preventDefault();
+				APP.contact.send(APP.contact.formData(form));
+			}, false);
+		}
+	},
+
+	formData: function (form) {
+		var formData = new FormData(form);
+		return formData;
+	},
+
+	send: function (data) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/contact", true);
+		xhr.onreadystatechange = function() {
+		    if (xhr.readyState == XMLHttpRequest.DONE && xhr.responseText === "200") {
+				var success = document.querySelector(".success");
+				success.innerHTML="<p>Thank you. We'll contact you soon.</p>"
+				
+			} else if (xhr.readyState == XMLHttpRequest.DONE && xhr.responseText === "500") {
+				var error = document.querySelector(".error");
+				error.innerHTML="<p>There was an error sending the form, please try again. If it fails you can also contact us at contact@latmosphere.com</p>"
+			}
+		}
+		xhr.send(data);
+	},
+
+	validate: function() {
+		// stub
+	}	
+};
+
+APP.contact.init();
 S = APP.slideshow;
 CONFIG = S.config;
