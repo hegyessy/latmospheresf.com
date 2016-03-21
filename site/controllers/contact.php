@@ -30,9 +30,9 @@ return function($site, $pages, $page) {
 	  ));
 
 	  if($email->send()) {
-		  echo "200";
+		  echo "success";
 	  } else {
-		  echo "500";
+		  echo "failure";
 	  }
 	}
 };

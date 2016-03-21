@@ -20,16 +20,14 @@ APP.slideshow = {
 			case "controlls":
 				S.controlls.next();
 				S.controlls.previous();
-				console.log("starting slideshow with controlls");
 				break;
 			case "auto":
 				(document.querySelector(".left-controll")) ? query(".left-controll").remove() : null;
 				(document.querySelector(".right-controll")) ? query(".left-controll").remove() : null;
 				S.auto();
-				console.log("starting auto slideshow");
 				break;
 			default:
-				console.log("default removed from config. why would you do that?");
+				console.log("Default removed from config. why would you do that?");
 		}
 	},
 
@@ -98,7 +96,8 @@ APP.slideshow = {
 APP.contact = {
 	
 	config: {
-		_formId: "contact"
+		_formId: "contact",
+		_responseClass: ".response" 
 	},
 	
 	init: function () {
@@ -120,27 +119,32 @@ APP.contact = {
 		return formData;
 	},
 
+	message: function (response) {
+		var res = response;
+		console.log(res);
+		var el = document.querySelector(APP.contact.config._responseClass);
+		switch (res) {
+			case "success":
+				el.innerHTML="<p>Thank you. We'll contact you soon.</p>";
+				break;
+			case "failure":
+				el.innerHTML="<p>There was an error sending the form, please try again.</p><p> If it fails you can also contact us at contact@latmosphere.com</p>"
+				break;
+			default:
+				console.log("Do or do not, there is no try.");
+		}
+	},
+
 	send: function (data) {
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", "/contact", true);
 		xhr.onreadystatechange = function() {
-		    if (xhr.readyState == XMLHttpRequest.DONE && xhr.responseText === "200") {
-				var success = document.querySelector(".success");
-				success.innerHTML="<p>Thank you. We'll contact you soon.</p>"
-				
-			} else if (xhr.readyState == XMLHttpRequest.DONE && xhr.responseText === "500") {
-				var error = document.querySelector(".error");
-				error.innerHTML="<p>There was an error sending the form, please try again. If it fails you can also contact us at contact@latmosphere.com</p>"
-			}
+			console.log(xhr.responseText);
+			(xhr.readyState == XMLHttpRequest.DONE) ? APP.contact.message(xhr.responseText) : null;
 		}
 		xhr.send(data);
-	},
-
-	validate: function() {
-		// stub
 	}	
 };
 
-APP.contact.init();
 S = APP.slideshow;
 CONFIG = S.config;

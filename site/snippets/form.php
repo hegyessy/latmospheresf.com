@@ -1,11 +1,7 @@
 <form id="contact" class="form" role="form">
 
-	<div class="success">
-		<!-- <p>Thank you. We'll contact you soon</p> -->
-	</div>
-	
-	<div class="error">
-		<!-- <p>Thank you. We'll contact you soon</p> -->
+	<div class="response">
+
 	</div>
 
 	<input type="text" class="contact-input" id="name" name="name" placeholder="Name (required)" required>
