@@ -18,7 +18,7 @@ return function($site, $pages, $page) {
 	);
 
 	if($invalid = invalid($data, $rules, $messages)) {
-	  $alert = $invalid;
+	  echo "failure";
 	} else {
 	  $body  = snippet('contactmail', $data, true);
 	  $email = Email(array(
@@ -28,11 +28,8 @@ return function($site, $pages, $page) {
 		'replyTo' => $data['email'],
 		'body'    => $body
 	  ));
-
-	  if($email->send()) {
-		  echo "success";
-	  } else {
-		  echo "failure";
-	  }
+	  
+	  $email->send();
+	  echo "success";
 	}
 };
