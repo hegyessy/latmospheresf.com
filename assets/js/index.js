@@ -1,30 +1,35 @@
 APP = {};
 
+APP.get = function (element) { return document.querySelector(element); }
+APP.getAll = function (elements) { return document.querySelectorAll(elements); }
+
 APP.slideshow = {
 
 	config: {
 		_id: "slideshow",
 		_class: ".slide",
 		_type: "controlls",
-		_transition: "crossFade",
+		_showClass: ".show",
+		_hideClass: ".hide",
 		_nextButtonClass: ".right-controll",
-		_prevButtonClass: ".left-controll"
+		_prevButtonClass: ".left-controll",
+		_slideDuration: 6000
 	},
 
 	init: function(){
-		if(!document.querySelector(".show")){
-			document.querySelector(".slide").classList.toggle("hide");
-			document.querySelector(".slide").classList.toggle("show");
+		if(!APP.get(APP.slideshow.config._showClass)){
+			APP.get(APP.slideshow.config._class).classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
+			APP.get(APP.slideshow.config._class).classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
 		}
-		switch (CONFIG._type) {
+		switch (APP.slideshow.config._type) {
 			case "controlls":
-				S.controlls.next();
-				S.controlls.previous();
+				APP.slideshow.controlls.next();
+				APP.slideshow.controlls.previous();
 				break;
 			case "auto":
-				(document.querySelector(".left-controll")) ? query(".left-controll").remove() : null;
-				(document.querySelector(".right-controll")) ? query(".left-controll").remove() : null;
-				S.auto();
+				(APP.get(APP.slideshow.config._prevButtonClass)) ? APP.get(APP.slideshow.config._prevButtonClass).remove() : null;
+				(APP.get(APP.slideshow.config._nextButtonClass)) ? APP.get(APP.slideshow.config._nextButtonClass).remove() : null;
+				APP.slideshow.auto();
 				break;
 			default:
 				console.log("Default removed from config. why would you do that?");
@@ -32,48 +37,48 @@ APP.slideshow = {
 	},
 
 	lastSlide: function() {
-		return document.querySelectorAll(".show").length;
+		return APP.getAll(APP.slideshow.config._showClass).length;
 	},
 
 	nextSlide: function() {
-		if (document.querySelector(".show").nextElementSibling) {
-			var el = document.querySelector(".show").nextElementSibling;
-			var slide = document.querySelector(".show");
+		if (APP.get(APP.slideshow.config._showClass).nextElementSibling) {
+			var slide = APP.get(APP.slideshow.config._showClass);
+			var el = slide.nextElementSibling;
 			APP.slideshow.toggle(el, slide);
 		} else {
-			var el = document.querySelectorAll(".slide")[0];
-			var slide = document.querySelector(".show");
+			var el = APP.getAll(APP.slideshow.config._class)[0];
+			var slide = App.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		}
 	},
 
 	prevSlide: function(){
-		if (document.querySelector(".show").previousElementSibling) {
-			var el = document.querySelector(".show").previousElementSibling;
-			var slide = document.querySelector(".show");
+		if (APP.get(APP.slideshow.config._showClass).previousElementSibling) {
+			var el = APP.get(APP.slideshow.config._showClass).previousElementSibling;
+			var slide = APP.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		} else {
-			var el = document.querySelectorAll(".slide")[0];
-			var slide = document.querySelector(".show");
+			var el = APP.getAll(APP.slideshow.config._class)[0];
+			var slide = APP.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		}
 	},
 
 	toggle: function (slide, el) {
 		if(slide){
-			slide.classList.toggle("show");
-			slide.classList.toggle("hide");
+			slide.classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
+			slide.classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
 		}
 		if(el){
-			el.classList.toggle("show");
-			el.classList.toggle("hide");
+			el.classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
+			el.classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
 		}
 	},
 
 	auto: function () {
 		return setInterval( function(){
 			APP.slideshow.nextSlide();
-		}, 6000);
+		},  APP.slideshow.config._slideDuration);
 	},
 
 	controlls: {
@@ -93,20 +98,26 @@ APP.slideshow = {
 	}
 };
 
+APP.router = {
+	
+}
+
 APP.contact = {
-	
+
 	config: {
-		_formId: "contact",
-		_responseClass: ".response" 
+		_formClass: ".form",
+		_responseClass: ".response",
+		_errorMessage: "<p>There was an error sending the form, please try again.<br/> You can also contact us diectly at contact@latmosphere.com</p>",
+		_successMessage: "<p>Thank you. We'll contact you soon.</p>"
 	},
-	
+
 	init: function () {
 		APP.contact.event.listen();
 	},
-	
+
 	event: {
 		listen: function() {
-			var form = document.getElementById(APP.contact.config._formId);
+			var form = document.querySelector(APP.contact.config._formClass);
 			form.addEventListener("submit", function(event) {
 				event.preventDefault();
 				APP.contact.send(APP.contact.formData(form));
@@ -114,21 +125,20 @@ APP.contact = {
 		}
 	},
 
-	formData: function (form) {
-		var formData = new FormData(form);
-		return formData;
+	formData: function (form) { 
+		return new FormData(form);
 	},
 
 	message: function (response) {
-		var res = response;
-		console.log(res);
 		var el = document.querySelector(APP.contact.config._responseClass);
-		switch (res) {
+		switch (response) {
 			case "success":
-				el.innerHTML="<p>Thank you. We'll contact you soon.</p>";
+				el.innerHTML=APP.contact.config._successMessage;
+				el.classList.add(response);
 				break;
 			case "failure":
-				el.innerHTML="<p>There was an error sending the form, please try again.</p><p> If it fails you can also contact us at contact@latmosphere.com</p>"
+				el.innerHTML=APP.contact.config._errorMessage;
+				el.classList.add(response);
 				break;
 			default:
 				console.log("Do or do not, there is no try.");
@@ -145,6 +155,3 @@ APP.contact = {
 		xhr.send(data);
 	}	
 };
-
-S = APP.slideshow;
-CONFIG = S.config;
