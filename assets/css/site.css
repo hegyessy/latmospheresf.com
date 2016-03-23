@@ -41,13 +41,16 @@ body {
 	animation-name: transitionOut;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
+	animation-style: ease-out;
 }
 
 .slide.show {
 	animation-name: transitionIn;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
+	animation-style: ease-in;
 }
+
 
 #slideshow .slide.portrait {
 	background-size: contain;
