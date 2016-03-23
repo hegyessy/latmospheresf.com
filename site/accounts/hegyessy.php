@@ -7,5 +7,6 @@ password: >
 language: en
 role: admin
 history:
+  - gallery
   - contact
   - home
