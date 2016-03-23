@@ -6,7 +6,7 @@
 	 		
 	 		foreach($pages->gallery->images()->limit(10) as $key => $image): ?>
 
-	 		<a href="gallery?image=<?php echo $key ?>" title=""><?php echo thumb($image, array('width' => 200, 'crop' => true)); ?></a>
+	 		<a href="gallery#<?php echo $key ?>" title=""><?php echo thumb($image, array('width' => 200, 'crop' => true)); ?></a>
 	 	<?php endforeach ?>
 	 </div>
 </div>
