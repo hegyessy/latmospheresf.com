@@ -83,7 +83,7 @@ APP.router = {
 			var imageInURL = window.location.hash.replace("#", "");
 			for (var i = 0; i < slides.length; i++ ){
 				if(imageInURL===slides[i].getAttribute("id")){
-					APP.slideshow.toggle(slides[i]);
+					APP.slideshow.toggle([slides[i], APP.slideshow.currentSlide()]);
 				}
 			}
 		}
@@ -147,5 +147,3 @@ APP.contact = {
 		xhr.send(data);
 	}	
 };
-
-APP.router.gallery();

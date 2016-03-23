@@ -17,7 +17,8 @@
 	</div>
 <?php echo js('assets/js/index.js') ?>
 <script>
-	APP.slideshow.init();	
+	APP.slideshow.init();
+	APP.router.gallery();
 </script>
 </body>
 </html>
