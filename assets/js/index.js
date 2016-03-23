@@ -37,7 +37,7 @@ APP.slideshow = {
 	},
 
 	lastSlide: function() {
-		return APP.getAll(APP.slideshow.config._showClass).length;
+		return APP.getAll(APP.slideshow.config._class).length;
 	},
 
 	nextSlide: function() {
@@ -45,9 +45,10 @@ APP.slideshow = {
 			var slide = APP.get(APP.slideshow.config._showClass);
 			var el = slide.nextElementSibling;
 			APP.slideshow.toggle(el, slide);
+			// APP.router.update();
 		} else {
 			var el = APP.getAll(APP.slideshow.config._class)[0];
-			var slide = App.get(APP.slideshow.config._showClass);
+			var slide = APP.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		}
 	},
@@ -58,7 +59,7 @@ APP.slideshow = {
 			var slide = APP.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		} else {
-			var el = APP.getAll(APP.slideshow.config._class)[0];
+			var el = APP.getAll(APP.slideshow.config._class)[(APP.slideshow.lastSlide()-1)];
 			var slide = APP.get(APP.slideshow.config._showClass);
 			APP.slideshow.toggle(el, slide);
 		}
@@ -92,7 +93,7 @@ APP.slideshow = {
 		previous: function() {
 			var button = document.querySelector(APP.slideshow.config._prevButtonClass);
 			button.addEventListener("click", function(){
-				APP.slideshow.nextSlide();
+				APP.slideshow.prevSlide();
 			}, false);
 		}
 	}
@@ -100,6 +101,23 @@ APP.slideshow = {
 
 APP.router = {
 	
+	gallery: function () {
+		if (window.location.pathname === "/gallery"){
+			var slides = APP.getAll(".slide");
+			var imageInURL = window.location.hash.replace("#", "");
+			console.log(window.location.hash);
+			for (var i = 0; i < slides.length; i++ ){
+				if(imageInURL===slides[i].getAttribute("id")){
+					console.log(slides[i])
+					APP.slideshow.toggle(slides[i]);
+				}
+			}
+		}
+	},
+
+	// update: function () {
+	// 	window.location.hash = APP.get(".show").getAttribute("id");
+	// }
 }
 
 APP.contact = {
@@ -155,3 +173,5 @@ APP.contact = {
 		xhr.send(data);
 	}	
 };
+
+APP.router.gallery();
