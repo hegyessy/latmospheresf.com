@@ -41,40 +41,49 @@ APP.slideshow = {
 	},
 
 	nextSlide: function() {
+		
+		var slides;
+		
 		if (APP.get(APP.slideshow.config._showClass).nextElementSibling) {
-			var slide = APP.get(APP.slideshow.config._showClass);
-			var el = slide.nextElementSibling;
-			APP.slideshow.toggle(el, slide);
-			// APP.router.update();
+			slides = [
+				APP.get(APP.slideshow.config._showClass),
+				APP.get(APP.slideshow.config._showClass).nextElementSibling
+			];
 		} else {
-			var el = APP.getAll(APP.slideshow.config._class)[0];
-			var slide = APP.get(APP.slideshow.config._showClass);
-			APP.slideshow.toggle(el, slide);
+			slides = [
+				APP.get(APP.slideshow.config._showClass),
+				APP.getAll(APP.slideshow.config._class)[0]
+			];			
 		}
+		APP.slideshow.toggle(slides);
 	},
 
 	prevSlide: function(){
+		
+		var slides;
+		
 		if (APP.get(APP.slideshow.config._showClass).previousElementSibling) {
-			var el = APP.get(APP.slideshow.config._showClass).previousElementSibling;
-			var slide = APP.get(APP.slideshow.config._showClass);
-			APP.slideshow.toggle(el, slide);
+			slides = [
+				APP.get(APP.slideshow.config._showClass).previousElementSibling,
+				APP.get(APP.slideshow.config._showClass)
+			];
 		} else {
-			var el = APP.getAll(APP.slideshow.config._class)[(APP.slideshow.lastSlide()-1)];
-			var slide = APP.get(APP.slideshow.config._showClass);
-			APP.slideshow.toggle(el, slide);
+			slides = [
+				APP.getAll(APP.slideshow.config._class)[(APP.slideshow.lastSlide()-1)],
+				APP.get(APP.slideshow.config._showClass)
+			];
+		}
+		APP.slideshow.toggle(slides);
+	},
+
+	toggle: function (slides) {
+		var slides = slides;
+		for (var i = 0; i < slides.length; i++ ){
+			slides[i].classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
+			slides[i].classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
 		}
 	},
 
-	toggle: function (slide, el) {
-		if(slide){
-			slide.classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
-			slide.classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
-		}
-		if(el){
-			el.classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
-			el.classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
-		}
-	},
 
 	auto: function () {
 		return setInterval( function(){
@@ -84,16 +93,18 @@ APP.slideshow = {
 
 	controlls: {
 		next: function() {
-			var button = document.querySelector(APP.slideshow.config._nextButtonClass);
+			var button = APP.get(APP.slideshow.config._nextButtonClass);
 			button.addEventListener("click", function() {
 				APP.slideshow.nextSlide();
+				APP.router.update();
 			}, false);
 		},
 
 		previous: function() {
-			var button = document.querySelector(APP.slideshow.config._prevButtonClass);
+			var button = APP.get(APP.slideshow.config._prevButtonClass);
 			button.addEventListener("click", function(){
 				APP.slideshow.prevSlide();
+				APP.router.update();
 			}, false);
 		}
 	}
@@ -105,19 +116,17 @@ APP.router = {
 		if (window.location.pathname === "/gallery"){
 			var slides = APP.getAll(".slide");
 			var imageInURL = window.location.hash.replace("#", "");
-			console.log(window.location.hash);
 			for (var i = 0; i < slides.length; i++ ){
 				if(imageInURL===slides[i].getAttribute("id")){
-					console.log(slides[i])
 					APP.slideshow.toggle(slides[i]);
 				}
 			}
 		}
 	},
 
-	// update: function () {
-	// 	window.location.hash = APP.get(".show").getAttribute("id");
-	// }
+	update: function () {
+		window.location.hash = APP.get(".show").getAttribute("id");
+	}
 }
 
 APP.contact = {
