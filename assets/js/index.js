@@ -17,10 +17,9 @@ APP.slideshow = {
 	},
 
 	init: function(){
-		if(!APP.get(APP.slideshow.config._showClass)){
-			APP.get(APP.slideshow.config._class).classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
-			APP.get(APP.slideshow.config._class).classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
-		}
+
+		APP.slideshow.currentSlide() ? null : APP.slideshow.toggle([APP.slideshow.firstSlide()]);
+
 		switch (APP.slideshow.config._type) {
 			case "controlls":
 				APP.slideshow.controlls.next();
@@ -36,45 +35,12 @@ APP.slideshow = {
 		}
 	},
 
-	lastSlide: function() {
-		return APP.getAll(APP.slideshow.config._class).length;
-	},
-
-	nextSlide: function() {
-		
-		var slides;
-		
-		if (APP.get(APP.slideshow.config._showClass).nextElementSibling) {
-			slides = [
-				APP.get(APP.slideshow.config._showClass),
-				APP.get(APP.slideshow.config._showClass).nextElementSibling
-			];
-		} else {
-			slides = [
-				APP.get(APP.slideshow.config._showClass),
-				APP.getAll(APP.slideshow.config._class)[0]
-			];			
-		}
-		APP.slideshow.toggle(slides);
-	},
-
-	prevSlide: function(){
-		
-		var slides;
-		
-		if (APP.get(APP.slideshow.config._showClass).previousElementSibling) {
-			slides = [
-				APP.get(APP.slideshow.config._showClass).previousElementSibling,
-				APP.get(APP.slideshow.config._showClass)
-			];
-		} else {
-			slides = [
-				APP.getAll(APP.slideshow.config._class)[(APP.slideshow.lastSlide()-1)],
-				APP.get(APP.slideshow.config._showClass)
-			];
-		}
-		APP.slideshow.toggle(slides);
-	},
+	allSlides: function() { return APP.getAll(APP.slideshow.config._class); },
+	currentSlide: function() { return APP.get(APP.slideshow.config._showClass); },
+	firstSlide: function() { return APP.getAll(APP.slideshow.config._class)[0]; },
+	lastSlide: function() { return APP.slideshow.allSlides()[APP.slideshow.allSlides().length - 1 ]; },
+	nextSlide: function() { return APP.slideshow.currentSlide().nextElementSibling ? APP.slideshow.currentSlide().nextElementSibling : APP.slideshow.firstSlide(); },
+	previousSlide: function() { return APP.slideshow.currentSlide().previousElementSibling ? APP.slideshow.currentSlide().previousElementSibling : APP.slideshow.lastSlide(); },
 
 	toggle: function (slides) {
 		var slides = slides;
@@ -84,18 +50,17 @@ APP.slideshow = {
 		}
 	},
 
-
 	auto: function () {
 		return setInterval( function(){
-			APP.slideshow.nextSlide();
-		},  APP.slideshow.config._slideDuration);
+			APP.slideshow.toggle([APP.slideshow.nextSlide(), APP.slideshow.currentSlide()]);
+		},  APP.slideshow.config._slideDuration );
 	},
 
 	controlls: {
 		next: function() {
 			var button = APP.get(APP.slideshow.config._nextButtonClass);
 			button.addEventListener("click", function() {
-				APP.slideshow.nextSlide();
+				APP.slideshow.toggle([APP.slideshow.nextSlide(), APP.slideshow.currentSlide()]);
 				APP.router.update();
 			}, false);
 		},
@@ -103,7 +68,7 @@ APP.slideshow = {
 		previous: function() {
 			var button = APP.get(APP.slideshow.config._prevButtonClass);
 			button.addEventListener("click", function(){
-				APP.slideshow.prevSlide();
+				APP.slideshow.toggle([APP.slideshow.previousSlide(), APP.slideshow.currentSlide()]);
 				APP.router.update();
 			}, false);
 		}
@@ -111,7 +76,7 @@ APP.slideshow = {
 };
 
 APP.router = {
-	
+
 	gallery: function () {
 		if (window.location.pathname === "/gallery"){
 			var slides = APP.getAll(".slide");
