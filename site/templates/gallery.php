@@ -13,7 +13,7 @@
 				style="background-image:url(<?php echo $image->url() ?>);">
 			</div>
 		
-		<?php endforeach ?>
+		<?php endforeach ?>
 	</div>
 <?php echo js('assets/js/index.js') ?>
 <script>
