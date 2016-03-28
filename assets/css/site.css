@@ -270,10 +270,6 @@ form .contact-button {
 
 @media (max-width: 414px) {
 
-	#slideshow .slide {
-		background-size: auto 100%;
-	}
-
 	header nav {
 		position: relative;
 		margin: 0 auto;
