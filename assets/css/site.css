@@ -309,7 +309,7 @@ form .contact-button {
 	header .slide {
 		background-position: top center;
 		background-attachment: fixed;
-	    background-size: cover;
+	    background-size: contain;
 	    overflow: hidden;
 	}
 
