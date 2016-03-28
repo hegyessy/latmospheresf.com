@@ -18,35 +18,35 @@ APP.slideshow = {
 
 	init: function(){
 
-		APP.slideshow.currentSlide() ? null : APP.slideshow.toggle([APP.slideshow.firstSlide()]);
+		this.currentSlide() ? null : this.toggle([this.firstSlide()]);
 
-		switch (APP.slideshow.config._type) {
+		switch (this.config._type) {
 			case "controlls":
-				APP.slideshow.controlls.next();
-				APP.slideshow.controlls.previous();
+				this.controlls.next();
+				this.controlls.previous();
 				break;
 			case "auto":
-				(APP.get(APP.slideshow.config._prevButtonClass)) ? APP.get(APP.slideshow.config._prevButtonClass).remove() : null;
-				(APP.get(APP.slideshow.config._nextButtonClass)) ? APP.get(APP.slideshow.config._nextButtonClass).remove() : null;
-				APP.slideshow.auto();
+				(APP.get(this.config._prevButtonClass)) ? APP.get(this.config._prevButtonClass).remove() : null;
+				(APP.get(this.config._nextButtonClass)) ? APP.get(this.config._nextButtonClass).remove() : null;
+				this.auto();
 				break;
 			default:
 				console.log("Default removed from config. why would you do that?");
 		}
 	},
 
-	allSlides: function() { return APP.getAll(APP.slideshow.config._class); },
-	currentSlide: function() { return APP.get(APP.slideshow.config._showClass); },
-	firstSlide: function() { return APP.getAll(APP.slideshow.config._class)[0]; },
-	lastSlide: function() { return APP.slideshow.allSlides()[APP.slideshow.allSlides().length - 1 ]; },
-	nextSlide: function() { return APP.slideshow.currentSlide().nextElementSibling ? APP.slideshow.currentSlide().nextElementSibling : APP.slideshow.firstSlide(); },
-	previousSlide: function() { return APP.slideshow.currentSlide().previousElementSibling ? APP.slideshow.currentSlide().previousElementSibling : APP.slideshow.lastSlide(); },
+	allSlides: function() { return APP.getAll(this.config._class); },
+	currentSlide: function() { return APP.get(this.config._showClass); },
+	firstSlide: function() { return APP.getAll(this.config._class)[0]; },
+	lastSlide: function() { return this.allSlides()[this.allSlides().length - 1 ]; },
+	nextSlide: function() { return this.currentSlide().nextElementSibling ? this.currentSlide().nextElementSibling : this.firstSlide(); },
+	previousSlide: function() { return this.currentSlide().previousElementSibling ? this.currentSlide().previousElementSibling : this.lastSlide(); },
 
 	toggle: function (slides) {
 		var slides = slides;
 		for (var i = 0; i < slides.length; i++ ){
-			slides[i].classList.toggle(APP.slideshow.config._hideClass.replace(".", ""));
-			slides[i].classList.toggle(APP.slideshow.config._showClass.replace(".", ""));
+			slides[i].classList.toggle(this.config._hideClass.replace(".", ""));
+			slides[i].classList.toggle(this.config._showClass.replace(".", ""));
 		}
 	},
 
