@@ -274,6 +274,7 @@ form .contact-button {
 		top: 5rem;
 		right: 0;
 		text-align: left;
+		opacity: 0;
 	}
 	
 	header h1 {
