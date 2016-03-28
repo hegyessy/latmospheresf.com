@@ -20,8 +20,6 @@ body {
 	bottom:0;
 	right:0;
 	opacity:1;
-/*	transition-delay: 1s;
-	transition: opacity 2s;*/
 }
 
 #slideshow .slide {
@@ -54,7 +52,6 @@ body {
 	animation-style: ease-in;
 }
 
-
 #slideshow .slide.portrait {
 	background-size: contain;
 }
@@ -70,7 +67,6 @@ p {
 	padding-bottom: 1vh;
 	line-height: 1.6rem;
 }
-
 
 header {
 	height: 70vh;
@@ -133,8 +129,6 @@ header .slide {
 	margin: 0rem 2rem 1rem 2rem;
 	width: 80%;
 }
-
-
 
 #gallery {
 	margin: 0 auto;
@@ -285,7 +279,6 @@ form .contact-button {
 		padding: 0;
 		padding-top: 1rem;
 		z-index: 2;
-
 	}
 	
 	header h1 a {
@@ -294,7 +287,6 @@ form .contact-button {
 		top: inherit;
 		left: inherit;
 	}
-	
 	
 	header nav  { 
 		position: relative;
@@ -306,7 +298,6 @@ form .contact-button {
 		left: inherit;
 	}
 
-	
 	header nav a {
 		color: white;
 		font-size: 1.2rem;
@@ -315,12 +306,13 @@ form .contact-button {
 		margin-left: 1rem;
 	}
 	
-
+	header .slide {
+		background-size: auto 100%;
+	}
+	
 	h2 {
 		line-height: 6rem;
 	}
-	
-
 	
 	#gallery-images img {
 		width: 120px;
@@ -330,4 +322,3 @@ form .contact-button {
 		padding-top: 2rem;
 	}
 }
-
