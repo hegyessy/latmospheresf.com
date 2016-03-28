@@ -290,7 +290,7 @@ form .contact-button {
 		z-index: 2;
 		text-align: center;
 		left: inherit;
-/*		opacity: 0;*/
+		opacity: 0;
 	}
 
 	header nav a {
