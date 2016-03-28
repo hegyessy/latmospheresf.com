@@ -16,10 +16,7 @@ body {
 
 #slideshow {
 	position: absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
+	top:0; right:0; bottom:0; left:0;
 	opacity:1;
 }
 
@@ -124,7 +121,6 @@ header .slide {
 
 #about {
 	display: flex;
-/*	flex-direction: column;*/
 	align-items: center;
 	justify-content: center;
 }
@@ -160,14 +156,15 @@ header .slide {
 	color: white;
 	width: 5rem;
 	cursor: pointer;
+	
 }
 
 .left-controll {
-	left: 1rem;
+	left: 0rem;
 }
 
 .right-controll {
-	right: 1rem;
+	right: 0rem;
 	text-align: right;
 }
 
@@ -217,7 +214,6 @@ footer h3 {
 
 .contact-input:focus::-webkit-input-placeholder {
 	color: rgba(0,0,0,0.1);
-
 }
 
 .contact-input:focus {
@@ -263,6 +259,10 @@ form .contact-button {
 	
 	#gallery-images img {
 		width: 200px;
+	}
+	
+	.button.controll {
+		width: 48px;
 	}
 }
 
@@ -310,6 +310,12 @@ form .contact-button {
 		height: 40vh;
 		background-position: top center;
 	    background-size: 100% auto;
+	    overflow: hidden;
+	}
+
+	#slideshow .slide {
+		background-position: top center;
+	    background-size: auto 100%;
 	    overflow: hidden;
 	}
 
