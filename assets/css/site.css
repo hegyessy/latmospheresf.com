@@ -70,41 +70,39 @@ p {
 header {
 	height: 70vh;
 	color: white;
-	font-size: 2rem;
+	font-size: 1.4rem;
 	index: 2;
 }
 
-header nav  { 
+header nav  {
 	position: absolute;
-	top: 2rem;
-	right: 3rem;
-	width: auto;
+	width: 100%;
+	display: flex;
 	z-index: 2;
-	text-align: right;
+	flex-direction: row;
+	justify-content: flex-end;
+	line-height: 48px;
 }
 
-h1 a { 
+header nav img {
 	position: absolute;
-	top: 2rem;
-	left: 3rem;
-	right:3rem;
-	width: auto;
-	z-index: 2;
-	text-align: left;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: rgba(255,255,255,1);
-}
-
-h1 a.center {
-	text-align: center;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 2.4rem;
 }
 
 header nav a {
 	color: white;
-	font-size: 1.2rem;
-	margin-left: 3rem;
+	margin-right: 2rem;
 }
+
+h1 {
+	align-self: flex-start;
+	margin-left: 1rem;
+	margin-right: auto;
+	font-size: 2rem;
+}
+
 
 header .slide {
 	position: absolute;
@@ -269,38 +267,35 @@ form .contact-button {
 
 @media (max-width: 414px) {
 	
-	header h1 {
-		position: relative;
-		margin: 0 auto;
-		text-align: center;
-		padding: 0;
-		padding-top: 1rem;
-		z-index: 2;
-	}
-	
-	header h1 a {
-		position: relative;
-		text-align: center;
-		top: inherit;
-		left: inherit;
-		text-shadow: none;
-	}
-	
-	header nav  { 
-		position: relative;
-		margin: 0 auto;
-		padding: 0;
-		z-index: 2;
-		text-align: center;
-		left: inherit;
-		opacity: 0;
+	header nav  {
+		display: flex;
+		flex-direction: row;
+		flex-flow: wrap;
+		align-items: center;
+		justify-content: center;
+		line-height: 48px;
+		font-size: 1.2rem;
 	}
 
-	header nav a {
-		font-size: 1.2rem;
-		margin-left: 0rem;
-		margin-right: 1rem;
+	header nav img {
+		width: 2rem;
+	}
+
+	header nav .link {
+		display: none;
+	}
+
+	h1 {
+		font-size: 1.4rem;
+		margin-right: 0;
+		text-align: center;
+	}
+	
+	#gallery-header h1 {
+		align-self: flex-start;
 		margin-left: 1rem;
+		margin-right: auto;
+		font-size: 2rem;
 	}
 	
 	header {

@@ -1,15 +1,14 @@
 <?php snippet('header') ?>
-
 	<header>
-		<h1><a href="/" title="about">L'atmosphere</a></h1>
 		<nav>
-			<a href="#about" title="about">About</a>
-			<a href="gallery" title="gallery">Gallery</a>
-			<a href="#contact" title="contact">Contact</a>
+			<h1><a href="/" title="about">L'atmosphere</a></h1>
+			<a href="#about" class="link" title="about">About</a>
+			<a href="gallery" class="link" title="gallery">Gallery</a>
+			<a href="#contact" class="link" title="contact">Contact</a>
 		</nav>
 		<?php foreach($page->images()->limit(3) as $image): ?>
 	 		<div class="slide hide" style="background-image:url(<?php echo $image->url();?>)"></div>
-	 	<?php endforeach ?>
+	 	<?php endforeach ?>
 	</header>
 
 	<h2>About</h2>

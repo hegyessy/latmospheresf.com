@@ -1,6 +1,11 @@
 <?php snippet('header') ?>
-	<header>
-		<h1><a href="/" title="about" class="center">L'atmosphere</a></h1>
+	<header id="gallery-header">
+		<nav>
+			<h1><a href="/" title="about" class="center">L'atmosphere</a></h1>
+			<a href="/" title="close">
+				<img src="/assets/images/ic_clear.svg" alt="close gallery">
+			</a> 
+		</nav>
 	</header>
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
 	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
