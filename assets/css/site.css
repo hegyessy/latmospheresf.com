@@ -307,9 +307,12 @@ form .contact-button {
 	}
 	
 	header .slide {
-		background-size: auto 100%;
+		background-position: top center;
+		background-attachment: fixed;
+	    background-size: cover;
+	    overflow: hidden;
 	}
-	
+
 	h2 {
 		line-height: 6rem;
 	}
@@ -321,4 +324,4 @@ form .contact-button {
 	footer {
 		padding-top: 2rem;
 	}
-}
+} 
