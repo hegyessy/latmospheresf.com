@@ -124,22 +124,20 @@ header .slide {
 
 #about {
 	display: flex;
-	flex-direction: column;
+/*	flex-direction: column;*/
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
-	max-width: 80%;
 }
 
 #about p {
 	margin: 0rem 2rem 1rem 2rem;
-	width: 80%;
+	width: 30%;
 }
 
 #gallery {
 	margin: 0 auto;
 	text-align: center;
-	padding: 5rem 0;
+	padding: 2rem 0;
 }
 
 #gallery-images {
@@ -284,7 +282,6 @@ form .contact-button {
 		text-align: center;
 		top: inherit;
 		left: inherit;
-/*		color: #444;*/
 		text-shadow: none;
 	}
 	
