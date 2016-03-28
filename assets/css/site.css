@@ -1,6 +1,7 @@
 body {
 	font-family: "ATC Overlook", "Futura", Sans-serif;
 	background-color: rgba(255,255,255,1);
+	color: #444;
 }
 
 @-webkit-keyframes transitionOut {
@@ -263,19 +264,6 @@ form .contact-button {
 }
 
 @media (max-width: 414px) {
-
-	header {
-		height: 50vh;
-	}
-
-	header nav {
-		position: relative;
-		margin: 0 auto;
-		top: 5rem;
-		right: 0;
-		text-align: left;
-		opacity: 0;
-	}
 	
 	header h1 {
 		position: relative;
@@ -291,6 +279,8 @@ form .contact-button {
 		text-align: center;
 		top: inherit;
 		left: inherit;
+/*		color: #444;*/
+		text-shadow: none;
 	}
 	
 	header nav  { 
@@ -299,24 +289,26 @@ form .contact-button {
 		padding: 0;
 		z-index: 2;
 		text-align: center;
-		top: 1rem;
 		left: inherit;
+		opacity: 0;
 	}
 
 	header nav a {
-		color: white;
 		font-size: 1.2rem;
 		margin-left: 0rem;
 		margin-right: 1rem;
 		margin-left: 1rem;
 	}
 	
+	header {
+		height: 40vh;
+	}
+	
 	header .slide {
+		height: 40vh;
 		background-position: top center;
-		background-attachment: fixed;
-	    background-size: auto 100%;
+	    background-size: 100% auto;
 	    overflow: hidden;
-		height: 50vh;
 	}
 
 	h2 {
