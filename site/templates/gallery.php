@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 	<header>
-		<h1><a href="/" title="about">L'atmosphere</a></h1>
+		<h1><a href="/" title="about" class="center">L'atmosphere</a></h1>
 	</header>
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
 	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
