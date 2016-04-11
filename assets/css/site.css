@@ -14,6 +14,16 @@ body {
   100% { opacity: 1;}
 }
 
+@-moz-keyframes transitionOut {
+  0% { opacity: 1; }
+  100% { opacity: 0;}
+}
+
+@-moz-keyframes transitionIn {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
 #slideshow {
 	position: absolute;
 	top:0; right:0; bottom:0; left:0;
@@ -316,6 +326,7 @@ form .contact-button {
 	}
 
 	h2 {
+		font-size: 2rem;
 		line-height: 6rem;
 	}
 	
