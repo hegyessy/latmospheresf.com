@@ -8,13 +8,12 @@ return function($site, $pages, $page) {
 	);
 	$rules = array(
 	  'name'  => array('required'),
-	  'email' => array('required'),
-	  'phone'  => array('required')
+	  'email' => array('required')
 	);
 	$messages = array(
 	  'name'  => 'Please enter a valid name',
 	  'email' => 'Please enter a valid email address',
-	  'phone'  => 'Please enter a text between 3 and 3000 characters'
+	  'phone'  => 'Please enter a phone number'
 	);
 
 	if($invalid = invalid($data, $rules, $messages)) {
