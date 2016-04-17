@@ -106,9 +106,8 @@ header nav  {
 
 header nav img {
 	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
-	width: 2.4rem;
+	top: 0.75rem;
+	width: 2rem;
 }
 
 header nav a {
@@ -155,6 +154,15 @@ header .slide {
 	padding: 2rem 0;
 }
 
+#gallery-header h1 {
+		align-self: flex-start;
+		margin-left: 1rem;
+		margin-right: auto;
+		font-size: 2rem;
+		margin: 0 auto;
+		text-align: center;
+}
+
 #gallery-images {
 	display: flex;
 	flex-direction: row;
@@ -175,7 +183,6 @@ header .slide {
 	color: white;
 	width: 5rem;
 	cursor: pointer;
-	
 }
 
 .left-controll {
