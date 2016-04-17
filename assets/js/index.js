@@ -109,7 +109,7 @@ APP.contact = {
 
 	event: {
 		listen: function() {
-			var form = document.querySelector(APP.contact.config._formClass);
+			var form = APP.get(APP.contact.config._formClass);
 			form.addEventListener("submit", function(event) {
 				event.preventDefault();
 				APP.contact.send(APP.contact.formData(form));
@@ -122,11 +122,15 @@ APP.contact = {
 	},
 
 	message: function (response) {
-		var el = document.querySelector(APP.contact.config._responseClass);
+		var el = APP.get(APP.contact.config._responseClass);
+		var inputElements = APP.getAll(".form-element"); 
 		switch (response) {
 			case "success":
-				el.innerHTML=APP.contact.config._successMessage;
+				el.innerHTML = APP.contact.config._successMessage;
 				el.classList.add(response);
+				for (var i = 0; i < inputElements.length; i++ ){
+					inputElements[i].classList.add("hide");
+				};
 				break;
 			case "failure":
 				el.innerHTML=APP.contact.config._errorMessage;

@@ -243,6 +243,24 @@ footer h3 {
 	color: rgba(65,68,83,1);
 }
 
+.response {
+	width: 30rem;
+	max-width: 80%;
+	padding: 1rem 0;
+	margin:0 auto;
+	text-align: center;
+}
+
+.response.success, .response.success.failure {
+	background-color: rgba(204,239,217,1);
+	color: rgba(0,174,65,1);
+}
+
+.response.failure {
+	background-color: rgba(255,219,204,1);
+	color: rgba(255,76,0,1);
+}
+
 form .contact-button {
 	background-color: rgba(65,68,83,1);
 	height: 3.2rem;
