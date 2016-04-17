@@ -163,6 +163,10 @@ header .slide {
 		text-align: center;
 }
 
+#gallery-header h1 a {
+	color: #222;
+}
+
 #gallery-images {
 	display: flex;
 	flex-direction: row;
