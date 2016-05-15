@@ -1,5 +1,5 @@
 body {
-	font-family: "ATC Overlook", "Futura", Sans-serif;
+	font-family: "Avenir", "Gotham", Sans-serif;
 	background-color: rgba(255,255,255,1);
 	color: #444;
 }
@@ -300,22 +300,22 @@ form .contact-button {
 	}
 
 	#gallery { padding: 0rem 0; }
-	
+
 	#gallery-images {
 		min-width: 100%;
 	}
-	
+
 	#gallery-images img {
 		width: 200px;
 	}
-	
+
 	.button.controll {
 		width: 48px;
 	}
 }
 
 @media (max-width: 414px) {
-	
+
 	header nav  {
 		display: flex;
 		flex-direction: row;
@@ -339,18 +339,18 @@ form .contact-button {
 		margin-right: 0;
 		text-align: center;
 	}
-	
+
 	#gallery-header h1 {
 		align-self: flex-start;
 		margin-left: 1rem;
 		margin-right: auto;
 		font-size: 2rem;
 	}
-	
+
 	header {
 		height: 40vh;
 	}
-	
+
 	header .slide {
 		height: 40vh;
 		background-position: top center;
@@ -368,12 +368,12 @@ form .contact-button {
 		font-size: 2rem;
 		line-height: 6rem;
 	}
-	
+
 	#gallery-images img {
 		width: 120px;
 	}
-	
+
 	footer {
 		padding-top: 2rem;
 	}
-} 
+}
