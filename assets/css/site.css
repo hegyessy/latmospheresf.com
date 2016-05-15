@@ -77,8 +77,7 @@ strong { font-weight: bold; }
 
 h2 {
 	font-size: 2.4rem;
-	line-height:12rem;
-	text-align:center;
+	line-height:6rem;
 }
 
 p {
@@ -88,7 +87,7 @@ p {
 }
 
 header {
-	height: 70vh;
+	height: 100vh;
 	color: white;
 	font-size: 1.4rem;
 	index: 2;
@@ -142,6 +141,12 @@ header .slide {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+}
+
+#about-content {
+	display: flex;
+	justify-content: center;
 }
 
 #about p {
@@ -150,21 +155,19 @@ header .slide {
 }
 
 #gallery {
+	height: 100vh;
 	margin: 0 auto;
 	text-align: center;
 	padding: 2rem 0;
 }
 
 #gallery-header h1 {
-		align-self: flex-start;
 		margin-left: 1rem;
-		margin-right: auto;
 		font-size: 2rem;
-		margin: 0 auto;
-		text-align: center;
+
 }
 
-#gallery-header h1 a {
+#gallery-header a {
 	color: #222;
 }
 
@@ -200,32 +203,23 @@ header .slide {
 }
 
 footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	text-align: center;
-	color: #444;
-	height: 50vh;
-	padding: 5rem 0 10rem 0;
-}
-
-footer h2 {
-	line-height: 2.4rem;
-}
-
-footer h3 {
-	line-height: 2rem;
-	color: rgba(150,150,150,1);
-	font-style: italic;
-	margin-bottom: 2rem;
+	height: 100vh;
 }
 
 .form *:focus {
-    outline: none;
+    outline: 0 none;
 }
 
 .form.success input {
 	display: none;
 }
 
-.form input {
+.form input, .form textarea {
 	display: block;
 	border: 0 none;
 	text-align: center;
@@ -255,10 +249,18 @@ footer h3 {
 	color: rgba(65,68,83,1);
 }
 
+textarea.contact-input {
+	box-sizing: border-box;
+	border: 0 none;
+	height: 6rem;
+	padding: 1rem;
+}
+
 .response {
+	box-sizing: border-box;
 	width: 30rem;
 	max-width: 80%;
-	padding: 1rem 0;
+	padding: 1rem;
 	margin:0 auto;
 	text-align: center;
 }
@@ -287,7 +289,7 @@ form .contact-button {
 .contact-button:active { background-color: rgba(35,146,77,1);}
 
 @media (max-width: 768px) {
-	#about {
+	#about-content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

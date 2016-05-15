@@ -14,7 +14,9 @@
 
 	<div id="about">
 		<h2 id="about-header">About</h2>
-		<?php echo kirbytext($page->about()) ?>
+		<div id="about-content">
+			<?php echo kirbytext($page->about()) ?>
+		</div>
 	</div>
 
 <?php snippet('home-gallery') ?>

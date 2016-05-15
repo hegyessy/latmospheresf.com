@@ -99,7 +99,7 @@ APP.contact = {
 	config: {
 		_formClass: ".form",
 		_responseClass: ".response",
-		_errorMessage: "<p>There was an error sending the form, please try again.<br/> You can also contact us diectly at contact@latmosphere.com</p>",
+		_errorMessage: "<p>There was an error sending the form, please try again. You can also contact us diectly at contact@latmosphere.com</p>",
 		_successMessage: "<p>Thank you. We'll contact you soon.</p>"
 	},
 
@@ -117,13 +117,13 @@ APP.contact = {
 		}
 	},
 
-	formData: function (form) { 
+	formData: function (form) {
 		return new FormData(form);
 	},
 
 	message: function (response) {
 		var el = APP.get(APP.contact.config._responseClass);
-		var inputElements = APP.getAll(".form-element"); 
+		var inputElements = APP.getAll(".form-element");
 		switch (response) {
 			case "success":
 				el.innerHTML = APP.contact.config._successMessage;
@@ -149,5 +149,5 @@ APP.contact = {
 			(xhr.readyState == XMLHttpRequest.DONE) ? APP.contact.message(xhr.responseText) : null;
 		}
 		xhr.send(data);
-	}	
+	}
 };

@@ -1,8 +1,8 @@
 <?php snippet('header') ?>
 	<header id="gallery-header">
 		<nav>
-			<h1><a href="/" title="home" class="center">L'atmosphere</a><!-- <a href="/" title="close">
-				<img src="/assets/images/ic_clear.svg" alt="close gallery"></a> --></h1>
+			<h1><a href="/" title="home" class="center">L'atmosphere</a></h1>
+			<a href="/" title="close"><div>Close</div></a>
 		</nav>
 	</header>
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
@@ -15,7 +15,7 @@
 				class="slide hide <?php echo $image->orientation(); ?>"
 				style="background-image:url(<?php echo $image->url() ?>);">
 			</div>
-		
+
 		<?php endforeach ?>
 	</div>
 <?php echo js('assets/js/index.js') ?>
