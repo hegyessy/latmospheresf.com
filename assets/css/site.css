@@ -86,13 +86,6 @@ p {
 	line-height: 1.6rem;
 }
 
-/* SECTION CLASS
-
-Handle each section on the homepage as it's own page.
-Content should fill up the viewport.
-
-*/
-
 section {
 	height: 100vh;
 	display: flex;
@@ -151,7 +144,6 @@ section h2 {
 	text-align: center;
 }
 
-
 #about .content {
 	display: flex;
 	justify-content: center;
@@ -183,8 +175,8 @@ section h2 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin:0 auto;
-	max-width: 80%;
+	width: 80%;
+	max-width: 1080px;
 }
 
 #gallery-images img {
