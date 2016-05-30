@@ -288,27 +288,34 @@ form .contact-button {
 .contact-button:active { background-color: rgba(35,146,77,1);}
 
 @media (max-width: 768px) {
-	#about-content {
-		display: flex;
+
+
+	#about .content {
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		min-width:100%;
 	}
 
-	#about p {
-		margin: 0rem 2rem 1rem 2rem;
-		min-width: 80%;
+	#about .content .bio-image {
+		width: 12rem;
+		height: 12rem;
+		margin-bottom: 4rem;
+		border-radius: 16rem;
 	}
 
-	#gallery { padding: 0rem 0; }
+	#about .content .bio-text {
+		max-width: 80%;
+	}
+
+	#about .content .bio-text p {
+		margin-bottom: 2rem;
+	}
 
 	#gallery-images {
 		min-width: 100%;
 	}
 
 	#gallery-images img {
-		width: 200px;
+		width: 160px;
 	}
 
 	.button.controll {
@@ -319,38 +326,19 @@ form .contact-button {
 @media (max-width: 414px) {
 
 	header nav  {
-		display: flex;
-		flex-direction: row;
-		flex-flow: wrap;
-		align-items: center;
-		justify-content: center;
-		line-height: 48px;
-		font-size: 1.2rem;
+
 	}
 
-	header nav img {
-		width: 2rem;
-	}
-
-	header nav .link {
+	/*header nav .link {
 		display: none;
-	}
+	}*/
 
-	h1 {
-		font-size: 1.4rem;
-		margin-right: 0;
-		text-align: center;
-	}
 
 	#gallery-header h1 {
 		align-self: flex-start;
 		margin-left: 1rem;
 		margin-right: auto;
 		font-size: 2rem;
-	}
-
-	header {
-		height: 40vh;
 	}
 
 	header .slide {
