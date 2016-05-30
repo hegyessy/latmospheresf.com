@@ -12,12 +12,6 @@
 	</header>
 
 
-	<div id="about">
-		<h2 id="about-header">About</h2>
-		<div id="about-content">
-			<?php echo kirbytext($page->about()) ?>
-		</div>
-	</div>
-
+<?php snippet('about') ?>
 <?php snippet('home-gallery') ?>
 <?php snippet('footer') ?>

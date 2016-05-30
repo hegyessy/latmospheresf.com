@@ -1,9 +1,12 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Home
+title: About
 pages: false
 files: true
 fields:
 	title:
 		label: Title
 		type:  text
+	about:
+		label: About
+		type: textarea
