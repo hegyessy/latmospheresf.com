@@ -1,10 +1,18 @@
 <?php snippet('header') ?>
-	<header>
-		<?php snippet('nav') ?>
-		<?php snippet('home-slideshow') ?>
-	</header>
 
+<section>
+	<?php snippet('nav') ?>
+	<?php snippet('home-slideshow') ?>
+</section>
 
-<?php snippet('about') ?>
-<?php snippet('home-gallery') ?>
-<?php snippet('footer') ?>
+<section>
+	<?php snippet('about') ?>
+</section>
+
+<section>
+	<?php snippet('home-gallery') ?>
+</section>
+
+<section>
+	<?php snippet('footer') ?>
+</section>
