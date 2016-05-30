@@ -125,6 +125,31 @@ section h1 a {
 	font-size: 2rem;
 }
 
+section h2 {
+	text-align: center;
+}
+
+#about .content {
+	display: flex;
+	height: 80%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+#about .content .bio-image {
+	height: 24rem;
+	min-width: 25%;
+	/*border: 1px red solid;*/
+	margin: 0 2rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#about .content .bio-text {
+	max-width: 40%;
+}
 /*header {
 	height: 100vh;
 	color: white;
@@ -175,38 +200,11 @@ header .slide {
 	opacity: 0;
 }*/
 
-/*#about {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-
-#about-content {
-	display: flex;
-	justify-content: center;
-}
-
-#about p {
-	margin: 0rem 2rem 1rem 2rem;
-	width: 30%;
-}*/
-
 #gallery {
 	height: 100vh;
 	margin: 0 auto;
 	text-align: center;
 	padding: 2rem 0;
-}
-
-#gallery-header h1 {
-		margin-left: 1rem;
-		font-size: 2rem;
-
-}
-
-#gallery-header a {
-	color: #222;
 }
 
 #gallery-images {

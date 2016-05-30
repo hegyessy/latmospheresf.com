@@ -5,7 +5,7 @@
 	<?php snippet('home-slideshow') ?>
 </section>
 
-<section>
+<section id="about">
 	<?php snippet('about') ?>
 </section>
 
