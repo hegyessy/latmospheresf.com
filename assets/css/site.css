@@ -133,6 +133,13 @@ section .slide {
 section nav a {
 	font-size: 1.4rem;
 	color: rgb(255,255,255);
+}
+
+section.gallery nav a {
+	color: rgb(40,40,40);
+}
+
+section nav a.link {
 	margin-left: 2rem;
 }
 
@@ -147,7 +154,6 @@ section h2 {
 
 #about .content {
 	display: flex;
-
 	justify-content: center;
 	flex-direction: row;
 }
@@ -155,8 +161,7 @@ section h2 {
 #about .content .bio-image {
 	height: 22rem;
 	min-width: 25%;
-	/*border: 1px red solid;*/
-	margin: 0 2rem;
+	margin-right: 2rem;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;

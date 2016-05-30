@@ -1,10 +1,10 @@
 <?php snippet('header') ?>
-	<header id="gallery-header">
+	<section id="header" class="gallery">
 		<nav>
 			<h1><a href="/" title="home" class="center">L'atmosphere</a></h1>
 			<a href="/" title="close"><div>Close</div></a>
 		</nav>
-	</header>
+	</section>
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
 	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
 
