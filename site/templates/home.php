@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-<section>
+<section id="header">
 	<?php snippet('nav') ?>
 	<?php snippet('home-slideshow') ?>
 </section>

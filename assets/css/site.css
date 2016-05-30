@@ -95,6 +95,10 @@ Content should fill up the viewport.
 
 section {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 section .slide {
@@ -111,14 +115,25 @@ section .slide {
 	opacity: 0;
 }
 
-section nav {
+#header {
+	justify-content: flex-start;
+}
+
+#header nav {
+	width: 95%;
 	position: relative;
 	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: space-between;
+	padding-top: 2rem;
 }
 
 section nav a {
 	font-size: 1.4rem;
 	color: rgb(255,255,255);
+	margin-left: 2rem;
 }
 
 section h1 a {
@@ -129,16 +144,16 @@ section h2 {
 	text-align: center;
 }
 
+
 #about .content {
 	display: flex;
-	height: 80%;
-	align-items: center;
+
 	justify-content: center;
 	flex-direction: row;
 }
 
 #about .content .bio-image {
-	height: 24rem;
+	height: 22rem;
 	min-width: 25%;
 	/*border: 1px red solid;*/
 	margin: 0 2rem;
@@ -150,55 +165,6 @@ section h2 {
 #about .content .bio-text {
 	max-width: 40%;
 }
-/*header {
-	height: 100vh;
-	color: white;
-	font-size: 1.4rem;
-	index: 2;
-}
-
-header nav  {
-	position: absolute;
-	width: 100%;
-	display: flex;
-	z-index: 2;
-	flex-direction: row;
-	justify-content: flex-end;
-	line-height: 48px;
-}
-
-header nav img {
-	position: absolute;
-	top: 0.75rem;
-	width: 2rem;
-}
-
-header nav a {
-	color: white;
-	margin-right: 2rem;
-}
-
-h1 {
-	align-self: flex-start;
-	margin-left: 1rem;
-	margin-right: auto;
-	font-size: 2rem;
-}
-
-
-header .slide {
-	position: absolute;
-	top:0;
-	left:0;
-	height: 100vh;
-	width: 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	z-index: 1;
-	opacity: 0;
-}*/
 
 #gallery {
 	height: 100vh;
