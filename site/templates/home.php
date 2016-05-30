@@ -13,6 +13,6 @@
 	<?php snippet('home-gallery') ?>
 </section>
 
-<section>
+<section id="contact">
 	<?php snippet('footer') ?>
 </section>

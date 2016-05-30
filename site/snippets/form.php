@@ -1,4 +1,4 @@
-<form id="contact" class="form" role="form">
+<form class="form" role="form">
 
 	<div class="response">
 	</div>

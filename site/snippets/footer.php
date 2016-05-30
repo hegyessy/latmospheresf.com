@@ -1,4 +1,4 @@
-<footer id="contact">
+<footer>
 	<h2>Contact</h2>
 	<?php snippet('form') ?>
 </footer>
