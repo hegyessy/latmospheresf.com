@@ -47,9 +47,9 @@ body {
 	bottom: 0;
 	right:0;
 	background-size: cover;
+	-webkit-background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 100vh;
 }
 
 .show { opacity: 1; }
