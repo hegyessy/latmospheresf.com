@@ -93,6 +93,7 @@ section {
 	align-items: center;
 	justify-content: center;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 section .slide {
@@ -349,17 +350,10 @@ form .contact-button {
 		font-size: 2rem;
 	}
 
-	header .slide {
-		height: 40vh;
-		background-position: top center;
-	    background-size: 100% auto;
-	    overflow: hidden;
-	}
-
 	#slideshow .slide {
 		background-position: top center;
-	    background-size: auto 100%;
-	    overflow: hidden;
+	  background-size: auto 100%;
+	  overflow: hidden;
 	}
 
 	h2 {
@@ -367,8 +361,16 @@ form .contact-button {
 		line-height: 6rem;
 	}
 
-	#gallery-images img {
-		width: 120px;
+	#gallery-images {
+		overflow: auto;
 	}
 
+	#gallery-images img {
+		width: 100px;
+		flex-shrink: 1;
+	}
+
+	#gallery-images a:last-child {
+		display: none;
+	}
 }
