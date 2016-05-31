@@ -186,10 +186,6 @@ section h2 {
 	padding: 0.5rem;
 }
 
-#contact {
-
-}
-
 .button {
 	position: absolute;
 	top: 45vh;
@@ -208,14 +204,10 @@ section h2 {
 	text-align: right;
 }
 
-footer {
+
+#contact {
 	display: flex;
-	width: 80%;
-	align-items: center;
 	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	height: 100vh;
 }
 
 .form *:focus {
@@ -226,19 +218,28 @@ footer {
 	display: none;
 }
 
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
 .form input, .form textarea {
-	display: block;
+	/*display: block;*/
 	border: 0 none;
+	box-sizing: border-box;
 	text-align: center;
 	font-size: 1rem;
 	font-weight: normal;
 	font-style: italic;
 	margin: 0 auto;
 	height: 3.5rem;
+	max-width: 90%;
 }
 
 .form .contact-input {
-	width: 80%;
 	margin-top: 0.2rem;
 	background-color: rgb(233,223,203);
 }
