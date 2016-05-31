@@ -103,7 +103,7 @@ section .slide {
 	width: 100%;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-size: cover;
 	-webkit-background-size: cover;
 	z-index: 1;
