@@ -210,6 +210,7 @@ section h2 {
 
 footer {
 	display: flex;
+	width: 80%;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -237,10 +238,9 @@ footer {
 }
 
 .form .contact-input {
-	width: 30rem;
-	max-width: 80%;
+	width: 80%;
 	margin-top: 0.2rem;
-	background-color: rgba(233,223,203,1);
+	background-color: rgb(233,223,203);
 }
 
 .contact-input:focus::-webkit-input-placeholder {
@@ -248,7 +248,7 @@ footer {
 }
 
 .contact-input:focus {
-	background-color: rgba(246,243,236,1);
+	background-color: rgb(246,243,236);
 }
 
 .contact-input::-webkit-input-placeholder {
@@ -373,4 +373,5 @@ form .contact-button {
 	#gallery-images a:last-child {
 		display: none;
 	}
+
 }
