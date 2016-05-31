@@ -87,7 +87,7 @@ p {
 }
 
 section {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -181,6 +181,10 @@ section h2 {
 
 #gallery-images img {
 	padding: 0.5rem;
+}
+
+#contact {
+	background-color: #fafafa;
 }
 
 .button {
@@ -325,13 +329,15 @@ form .contact-button {
 
 @media (max-width: 414px) {
 
-	header nav  {
-
+	#header nav  {
+		flex-direction: column;
 	}
 
-	/*header nav .link {
-		display: none;
-	}*/
+	#header nav .link {
+		margin-left: 0;
+		margin-right: 2rem;
+		line-height: 4rem;
+	}
 
 
 	#gallery-header h1 {
