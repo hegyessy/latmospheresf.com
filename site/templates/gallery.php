@@ -1,8 +1,8 @@
 <?php snippet('header') ?>
 	<section id="header" class="gallery">
 		<nav>
-			<h1><a href="/" title="home" class="center">L'atmosphere</a></h1>
-			<a href="/" title="close"><div>Close</div></a>
+			<h1><a href="/" title="home">L'atmosphere</a></h1>
+			<div><a href="/" title="close" class="link">Close</a></div>
 		</nav>
 	</section>
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
