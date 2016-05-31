@@ -4,7 +4,7 @@
 			<h1><a href="/" title="home">L'atmosphere</a></h1>
 			<div><a href="/" title="close" class="link">Close</a></div>
 		</nav>
-	</section>
+
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
 	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
 
@@ -18,6 +18,7 @@
 
 		<?php endforeach ?>
 	</div>
+	</section>
 <?php echo js('assets/js/index.js') ?>
 <script>
 	APP.slideshow.init();
