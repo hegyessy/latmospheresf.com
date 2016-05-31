@@ -1,10 +1,11 @@
 <?php
 return function($site, $pages, $page) {
-	
+
 	$data = array(
 	  'name'  => get('name'),
 	  'email' => get('email'),
-	  'phone'  => get('phone')
+	  'phone'  => get('phone'),
+		'message' => get('message')
 	);
 	$rules = array(
 	  'name'  => array('required'),
@@ -27,7 +28,7 @@ return function($site, $pages, $page) {
 		'replyTo' => $data['email'],
 		'body'    => $body
 	  ));
-	  
+
 	  $email->send();
 	  echo "success";
 	}
