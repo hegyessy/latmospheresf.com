@@ -1,5 +1,5 @@
 .DS_Store
-/site/accounts
+/site/
 /site/config/config.php
 /assets/avatars
 /thumbs/*
