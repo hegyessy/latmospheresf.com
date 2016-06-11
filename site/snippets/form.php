@@ -1,5 +1,5 @@
 <form class="form" role="form">
-<p>Please call +1 415 404-5196 or fill the form bellow.</p>
+<p>Please call +1 415 404-5196 or fill the form below.</p>
 	<div class="response">
 
 	</div>
