@@ -9,7 +9,7 @@
 	<img id="prev" class="button left-controll controll" src="assets/images/ic_arrow_left.svg" />
 
 	<div id="slideshow">
-		<?php foreach($page->images()->flip() as $key => $image): ?>
+		<?php foreach($page->images()->sortBy('sort', 'asc') as $key => $image): ?>
 			<div
 				id="<?php echo $key ?>"
 				class="slide hide <?php echo $image->orientation(); ?>"
