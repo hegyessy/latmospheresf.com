@@ -1,23 +1,29 @@
 @font-face {
     font-family: 'quincy_cfregular';
-    src: url('../fonts/quincycf-regular-webfont.woff2') format('woff2'),
-         url('../fonts/quincycf-regular-webfont.woff') format('woff');
+    src: url('../fonts/QuincyCF-Regular.woff2') format('woff2'),
+         url('../fonts/QuincyCF-Regular.woff') format('woff'),
+         url('../fonts/QuincyCF-Regular.eot') format('eot'),
+         url('../fonts/QuincyCF-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'quincy_cfbold';
-    src: url('../fonts/quincycf-bold-webfont.woff2') format('woff2'),
-         url('../fonts/quincycf-bold-webfont.woff') format('woff');
+    src: url('../fonts/QuincyCF-Bold.woff2') format('woff2'),
+         url('../fonts/QuincyCF-Bold.woff') format('woff'),
+         url('../fonts/QuincyCF-Bold.eot') format('eot'),
+         url('../fonts/QuincyCF-Bold.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'quincy_cfitalic';
-    src: url('../fonts/quincycf-italic-webfont.woff2') format('woff2'),
-         url('../fonts/quincycf-italic-webfont.woff') format('woff');
+    src: url('../fonts/QuincyCF-Italic.woff2') format('woff2'),
+         url('../fonts/QuincyCF-Italic.woff') format('woff'),
+         url('../fonts/QuincyCF-Italic.eot') format('eot'),
+         url('../fonts/QuincyCF-Italic.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
