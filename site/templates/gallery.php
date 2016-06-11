@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 	<section id="header" class="gallery">
 		<nav>
-			<h1><a href="/" title="home">L'atmosphere</a></h1>
+			<h1><a href="/" title="home">L'Atmosphere</a></h1>
 			<div><a href="/" title="close" class="link">Close</a></div>
 		</nav>
 

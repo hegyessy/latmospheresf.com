@@ -1,6 +1,7 @@
 <form class="form" role="form">
-
+<p>Please call +1 415 404-5196 or fill the form bellow.</p>
 	<div class="response">
+
 	</div>
 
 	<input type="text" class="form-element contact-input" id="name" name="name" placeholder="Name (required)" required>

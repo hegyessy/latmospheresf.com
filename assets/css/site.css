@@ -1,5 +1,5 @@
 body {
-	font-family: "Avenir", "Gotham", Sans-serif;
+	font-family: "Quincy CF", "Gotham", Sans-serif;
 	background-color: rgba(255,255,255,1);
 	color: #444;
 }
@@ -207,6 +207,7 @@ section h2 {
 	justify-content: center;
 	max-width: 80%;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .form input, .form textarea {
@@ -249,7 +250,7 @@ textarea.contact-input {
 .response {
 	box-sizing: border-box;
 	width: 30rem;
-	max-width: 80%;
+	max-width: 90%;
 	padding: 1rem;
 	margin:0 auto;
 	text-align: center;

@@ -99,7 +99,7 @@ APP.contact = {
 	config: {
 		_formClass: ".form",
 		_responseClass: ".response",
-		_errorMessage: "<p>There was an error sending the form, please try again. You can also contact us diectly at ingrid@latmospheresf.com</p>",
+		_errorMessage: "<p>There was an error sending the form, please try again. You can also contact us directly at ingrid@latmospheresf.com</p>",
 		_successMessage: "<p>Thank you. We'll contact you soon.</p>"
 	},
 
