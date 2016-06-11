@@ -3,6 +3,9 @@
 title: Home
 pages: false
 files: true
+files:
+    sortable: true
+		sanitize: true
 fields:
 	title:
 		label: Title
