@@ -224,7 +224,7 @@ section h2 {
 
 .form .contact-input {
 	margin-top: 0.2rem;
-	background-color: rgb(233,223,203);
+	background-color: rgba(233,223,203, 0.4);
 }
 
 .contact-input:focus::-webkit-input-placeholder {
