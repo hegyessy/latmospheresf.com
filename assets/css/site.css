@@ -1,7 +1,32 @@
+@font-face {
+    font-family: 'quincy_cfregular';
+    src: url('../fonts/quincycf-regular-webfont.woff2') format('woff2'),
+         url('../fonts/quincycf-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quincy_cfbold';
+    src: url('../fonts/quincycf-bold-webfont.woff2') format('woff2'),
+         url('../fonts/quincycf-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quincy_cfitalic';
+    src: url('../fonts/quincycf-italic-webfont.woff2') format('woff2'),
+         url('../fonts/quincycf-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-	font-family: "Quincy CF", "Gotham", Sans-serif;
+	font-family: "quincy_cfregular", "Baskerville", Serif;
 	background-color: rgba(255,255,255,1);
 	color: #444;
+	font-weight: normal;
 }
 
 @keyframes transitionOut {
@@ -211,7 +236,7 @@ section h2 {
 }
 
 .form input, .form textarea {
-	/*display: block;*/
+	font-family: "quincy_cfitalic", "quincy_cfregular", "Serif";
 	border: 0 none;
 	box-sizing: border-box;
 	text-align: center;
