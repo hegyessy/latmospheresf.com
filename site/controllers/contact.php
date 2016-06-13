@@ -29,7 +29,19 @@ return function($site, $pages, $page) {
 		'body'    => $body
 	  ));
 
-	  $email->send();
-	  echo "success";
+		$email_confirmation = Email(array(
+				'to'      => 'jason@hegyessy.com',
+				'from'    => 'ingrid@latmospheresf.com',
+				'subject' => 'New contact request',
+				'replyTo' => $data['email'],
+				'body'    => $body
+		));
+
+	  if($email->send()){
+			$email_confirmation->send();
+			echo 'success';
+		} else {
+			echo 'email failed';
+		}
 	}
 };
