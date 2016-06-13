@@ -22,7 +22,8 @@ return function($site, $pages, $page) {
 	} else {
 	  $body  = snippet('contactmail', $data, true);
 	  $email = Email(array(
-		'to'      => 'ingrid@latmospheresf.com',
+		// 'to'      => 'ingrid@latmospheresf.com',
+		'to'      => 'jason@hegyessy.com',
 		'from'    => 'ingrid@latmospheresf.com',
 		'subject' => 'New contact request',
 		'replyTo' => $data['email'],
