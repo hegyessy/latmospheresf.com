@@ -348,16 +348,27 @@ form .contact-button {
 
 @media (max-width: 414px) {
 
-	#header nav  {
-		flex-direction: column;
-	}
+  #header nav  {
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
 
-	#header nav .link {
+  #header nav .link {
 		margin-left: 0;
 		margin-right: 2rem;
 		line-height: 4rem;
 	}
 
+	#header.gallery nav  {
+    padding-top: 1rem;
+	}
+
+  #header nav img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 
 	#gallery-header h1 {
 		align-self: flex-start;

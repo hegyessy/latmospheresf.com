@@ -2,7 +2,7 @@
 	<section id="header" class="gallery">
 		<nav>
 			<h1><a href="/" title="home">L'Atmosphere</a></h1>
-			<div><a href="/" title="close" class="link">Close</a></div>
+			<div><a href="/" title="close" class="link"><img src="assets/images/ic_clear.svg" height="32px" alt="close the gallery" /></a></div>
 		</nav>
 
 	<img id="next" class="button right-controll controll" src="assets/images/ic_arrow_right.svg" />
