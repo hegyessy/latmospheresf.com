@@ -14,3 +14,7 @@ Phone: <?php echo $phone ?>
 ----
 Message:
 <?php echo $message ?>
+
+----
+Message Sent:
+<?php echo $time ?>

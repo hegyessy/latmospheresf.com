@@ -10,3 +10,4 @@ assets/fonts/*.woff2
 assets/fonts/*.eot
 assets/fonts/*.ttf
 /thumbs
+/content

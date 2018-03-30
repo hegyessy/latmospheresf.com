@@ -1,16 +1,21 @@
 <?php
 return function($site, $pages, $page) {
 
+    $time = date('l jS \of F Y h:i:s A'); 
+
 	$data = array(
 	  'name'  => get('name'),
 	  'email' => get('email'),
 	  'phone'  => get('phone'),
-		'message' => get('message')
+	  'message' => get('message'),
+	  'time' => $time
 	);
+
 	$rules = array(
 	  'name'  => array('required'),
 	  'email' => array('required')
 	);
+
 	$messages = array(
 	  'name'  => 'Please enter a valid name',
 	  'email' => 'Please enter a valid email address',
@@ -20,25 +25,18 @@ return function($site, $pages, $page) {
 	if($invalid = invalid($data, $rules, $messages)) {
 	  echo "failure";
 	} else {
-	  $body  = snippet('contactmail', $data, true);
-	  $email = Email(array(
-		'to'      => 'ingrid@latmospheresf.com',
-		'from'    => 'ingrid@latmospheresf.com',
+	
+	$body  = snippet('contactmail', $data, true);
+	
+	$email = Email(array(
+		'to'      => 'jason@hegyessy.com',
+		'from'    => 'ingrid@latmposhperesf.com',
 		'subject' => 'New contact request',
 		'replyTo' => $data['email'],
 		'body'    => $body
-	  ));
+	));
 
-		$email_confirmation = Email(array(
-				'to'      => 'jason@hegyessy.com',
-				'from'    => 'ingrid@latmospheresf.com',
-				'subject' => 'New contact request',
-				'replyTo' => $data['email'],
-				'body'    => $body
-		));
-
-	  if($email->send()){
-			$email_confirmation->send();
+	if($email->send()){
 			echo 'success';
 		} else {
 			echo 'email failed';
