@@ -1,7 +1,7 @@
 <?php
 return function($site, $pages, $page) {
 
-    $time = date('l jS \of F Y h:i:s A'); 
+  $time = date('l jS \of F Y h:i:s A');
 
 	$data = array(
 	  'name'  => get('name'),
@@ -25,21 +25,20 @@ return function($site, $pages, $page) {
 	if($invalid = invalid($data, $rules, $messages)) {
 	  echo "failure";
 	} else {
-	
-	$body  = snippet('contactmail', $data, true);
-	
-	$email = Email(array(
-		'to'      => 'jason@hegyessy.com',
-		'from'    => 'ingrid@latmposhperesf.com',
-		'subject' => 'New contact request',
-		'replyTo' => $data['email'],
-		'body'    => $body
-	));
+	  
+	  $body  = snippet('contactmail', $data, true);	
+    $email = Email(array(
+    	'to'      => 'ingrid.ternynck@gmail.com',
+    	'from'    => 'ingrid@latmposhperesf.com',
+    	'subject' => 'New contact request',
+    	'replyTo' => $data['email'],
+    	'body'    => $body
+    ));
 
-	if($email->send()){
-			echo 'success';
+    if($email->send()){
+	    echo 'success';
 		} else {
-			echo 'email failed';
+	    echo 'email failed';
 		}
 	}
 };
